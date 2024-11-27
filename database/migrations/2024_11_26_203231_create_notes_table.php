@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->id()->autoIncrement();
+            $table->integer('user_id')->nullable();
+            $table->string('title', 200)->nullable();
+            $table->string('text', 3000)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
