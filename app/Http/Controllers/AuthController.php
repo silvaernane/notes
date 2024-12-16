@@ -70,7 +70,8 @@ class AuthController extends Controller
             ]
         ]);
 
-        echo "Login efetuado com sucesso! Usuário: " . session('user.username');
+        // redirect to home
+        return redirect()->to('/');
     }
 
     public function logout()
